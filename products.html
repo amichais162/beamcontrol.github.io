@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="BeamControl — תוכנת שליטה חכמה לציוד AV בכיתות. מחליפה בקר AV יקר בתוכנה — שולטת על מקרן, מסך חשמלי, TV, רמקולים ומצלמה. ללא חומרה חיצונית.">
+<meta name="keywords" content="בקר AV, שליטה על מקרן, כיתה חכמה, BeamControl, תוכנת שליטה, ציוד AV, מקרן כיתה, מסך חשמלי">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="BeamControl — פתרון ישראלי לניהול AV חכם">
+<meta property="og:description" content="תוכנת שליטה לציוד AV בכיתות חכמות. ללא בקר חיצוני.">
+<meta property="og:url" content="https://beamcontrol.co.il/products.html">
+<title>BeamControl - מוצרים</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700;6..72,800&amp;family=Inter:wght@400;500;600;700&amp;family=Assistant:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#fbf9f4",
+              "on-tertiary-container": "#fffbff",
+              "on-tertiary-fixed-variant": "#643f00",
+              "outline-variant": "#bfc7d0",
+              "on-primary-container": "#fcfcff",
+              "on-secondary-fixed-variant": "#004e5e",
+              "surface-container-high": "#eae8e3",
+              "primary-fixed-dim": "#87ceff",
+              "secondary": "#00677c",
+              "outline": "#707880",
+              "surface-container-highest": "#e4e2dd",
+              "on-secondary-container": "#00687d",
+              "surface-tint": "#00658f",
+              "primary-container": "#1f7cab",
+              "surface-bright": "#fbf9f4",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "on-surface": "#1b1c19",
+              "surface-container-low": "#f5f3ee",
+              "on-error": "#ffffff",
+              "secondary-fixed-dim": "#81d2eb",
+              "primary-fixed": "#c8e6ff",
+              "on-surface-variant": "#40484f",
+              "inverse-primary": "#87ceff",
+              "tertiary-container": "#a0690c",
+              "tertiary-fixed-dim": "#feb95b",
+              "surface-container": "#f0eee9",
+              "surface-variant": "#e4e2dd",
+              "on-secondary-fixed": "#001f27",
+              "tertiary-fixed": "#ffddb6",
+              "tertiary": "#805200",
+              "primary": "#00628c",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#004c6d",
+              "on-background": "#1b1c19",
+              "on-tertiary-fixed": "#2a1800",
+              "secondary-fixed": "#b1ecff",
+              "on-primary-fixed": "#001e2e",
+              "inverse-surface": "#30312e",
+              "surface-dim": "#dcdad5",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#95e6ff",
+              "background": "#fbf9f4",
+              "inverse-on-surface": "#f2f1ec"
+            },
+            fontFamily: {
+              "headline": ["Assistant", "sans-serif"],
+              "body": ["Assistant", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f4;
+            color: #1b1c19;
+            font-family: 'Assistant', sans-serif;
+        }
+        h1, h2, h3, .hero-font {
+            font-family: 'Assistant', sans-serif;
+        }
+        #lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        #lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            cursor: pointer;
+            font-size: 2.5rem;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden" data-mode="connect">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f4] dark:bg-[#1b1c19] flex flex-row-reverse justify-between items-center w-full px-12 py-6 max-w-none mx-auto border-b border-outline-variant/10">
+<div class="flex items-center gap-2">
+<img alt="BeamControl" src="logo_bc.png" style="height: 40px; width: auto;"/>
+</div>
+<div class="hidden md:flex flex-row-reverse items-center gap-10 text-lg font-semibold tracking-tight">
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="index.html">בית</a>
+<a class="text-[#00628c] dark:text-[#2F86B6] border-b-2 border-[#00628c] pb-1 hover:opacity-100 transition-colors duration-300" href="products.html">מוצרים</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="about.html">אודות</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="contact.html">צור קשר</a>
+</div>
+<a class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-semibold tracking-tight scale-95 active:duration-100 transition-all hover:brightness-110" href="contact.html">
+            צור קשר
+        </a>
+</nav>
+<!-- Section 1: Hero -->
+<header class="relative w-full py-24 md:py-32 text-white flex flex-col items-center justify-center text-center overflow-hidden bg-[#0d4a5e]">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+</div>
+<div class="relative z-10 max-w-4xl px-6">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">הפתרון החכם לניהול AV</h1>
+<p class="text-xl md:text-2xl font-light opacity-90 mb-10 max-w-2xl mx-auto">שני מוצרים. כיסוי מלא לכל סוג חלל.</p>
+<a class="inline-block bg-[#00628c] hover:bg-[#004c6d] text-white px-10 py-4 text-lg font-bold rounded-sm transition-all shadow-xl" href="contact.html">בקש הדגמה</a>
+</div>
+</header>
+<!-- Section 2: Product Cards -->
+<section class="py-24 bg-surface px-6">
+<div class="max-w-7xl mx-auto" style="margin-top: -110px; position: relative; z-index: 10;">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- BeamControl Pro (Left) -->
+<div class="flex flex-col bg-surface-container-lowest border-2 border-[#00628c] rounded-md overflow-hidden transition-all hover:shadow-2xl relative">
+<div class="absolute top-4 left-4 bg-[#00628c] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">מומלץ</div>
+<div class="p-8 flex-1">
+<div class="mb-8 overflow-hidden rounded-sm bg-surface-container">
+<img class="w-full h-64 object-cover cursor-pointer" onclick="openLightbox('pro_pc_full.jpg')" src="pro_pc.jpg" alt="BeamControl Pro"/>
+</div>
+<h3 class="text-3xl font-bold text-on-surface mb-4">BeamControl Pro</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">פתרון פרימיום לחללים מורכבים הדורשים שליטה מרובת ממשקים ודיוק מקסימלי.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-on-surface-variant">כל יכולות ה-Basic</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">tv</span>
+<span class="text-on-surface-variant">שליטה על מסך TV נוסף</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">videocam</span>
+<span class="text-on-surface-variant">מצלמת PTZ עם פריסטים מובנים</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">hub</span>
+<span class="text-on-surface-variant">חיבורים מרובים ועצמאיים</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<span class="text-on-surface-variant">חיווי ויזואלי לפריסטים פעילים בזמן אמת</span>
+</li>
+</ul>
+</div>
+<div class="p-8 bg-surface-container-low border-t border-outline-variant/20">
+<a class="w-full bg-primary text-white py-4 font-bold rounded-sm hover:bg-primary-container transition-colors block text-center" href="contact.html">בקש הדגמה</a>
+</div>
+</div>
+<!-- BeamControl Basic (Right) -->
+<div class="flex flex-col bg-surface-container-lowest border border-outline-variant/30 rounded-md overflow-hidden transition-all hover:shadow-lg">
+<div class="p-8 flex-1">
+<div class="mb-8 overflow-hidden rounded-sm bg-surface-container">
+<img class="w-full h-64 object-cover cursor-pointer" onclick="openLightbox('basic_pc_full.jpg')" src="basic_pc.jpg" alt="BeamControl Basic"/>
+</div>
+<h3 class="text-3xl font-bold text-on-surface mb-4">BeamControl Basic</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">פתרון אידיאלי לכיתות לימוד סטנדרטיות וחדרי ישיבות בינוניים המעוניינים בפשטות ויעילות.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">power_settings_new</span>
+<span class="text-sm font-medium">הפעלה/כיבוי מערכת</span>
+</div>
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">keyboard_arrow_up</span>
+<span class="text-sm font-medium">שליטה במסך מקרן חשמלי</span>
+</div>
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">volume_up</span>
+<span class="text-sm font-medium">ווליום</span>
+</div>
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">desktop_access_disabled</span>
+<span class="text-sm font-medium">החשכת מסך</span>
+</div>
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">speaker</span>
+<span class="text-sm font-medium">שליטה על מתח הרמקולים</span>
+</div>
+<div class="flex items-center gap-3 py-2 px-3 bg-surface rounded-sm">
+<span class="material-symbols-outlined text-primary">settings_input_hdmi</span>
+<span class="text-sm font-medium">מיתוג HDMI 1 ו-2</span>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low border-t border-outline-variant/20">
+<a class="w-full bg-surface-container-highest text-primary py-4 font-bold rounded-sm hover:bg-surface-container-high transition-colors block text-center" href="contact.html">בקש הדגמה</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Comparison Table -->
+<section class="bg-surface-container-low px-6 pt-24 pb-8">
+<div class="max-w-5xl mx-auto" style="margin-bottom: -60px; position: relative; z-index: 10;">
+<h2 class="text-4xl font-bold text-center mb-16">BeamControl מול בקר חיצוני קלאסי</h2>
+<div class="overflow-hidden rounded-md border border-outline-variant/30 bg-white shadow-sm">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant/40">
+<th class="p-6 text-xl font-bold w-1/3">תכונה</th>
+<th class="p-6 text-xl font-bold text-primary w-1/3">BeamControl</th>
+<th class="p-6 text-xl font-bold text-on-surface-variant opacity-60 w-1/3">בקר קלאסי</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr>
+<td class="p-6 font-semibold">מחיר</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                חסכוני משמעותית
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">יקר ומסורבל</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">התקנה</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                Plug &amp; Play מהיר
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">שעות של חיווט, קדיחה והתקנה פיזית</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">תכנות</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                ללא צורך בקוד
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">דורש מתכנת מוסמך</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">תחזוקה</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                תוכנה בלבד — אין חומרה שיכולה להישבר
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">פאנל פיזי על הקיר — חשוף לנזק ותקלות</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">עדכונים</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                עדכון עצמאי בלחיצה אחת
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">דורש טכנאי לתכנות מחדש</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">גמישות</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                מודולריות מלאה
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">חומרה סגורה וקבועה</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">שפה</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                מעבר עברית/אנגלית בלחיצה אחת
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">תוויות קבועות</td>
+</tr>
+<tr>
+<td class="p-6 font-semibold">קלות שימוש</td>
+<td class="p-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+                                ממשק פשוט ואינטואיטיבי — כל מורה מבין מיד
+                            </td>
+<td class="p-6 text-on-surface-variant opacity-60">לחצנים פיזיים לא תמיד ברורים</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 4: Demo Request -->
+<section class="py-24 text-white relative overflow-hidden bg-[#0d4a5e]" id="demo">
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-4xl md:text-5xl font-extrabold mb-6">רוצים לראות את זה בפעולה?</h2>
+<p class="text-xl opacity-80 mb-12">נשמח להגיע אליכם להדגמה חיה — ללא עלות וללא התחייבות.</p>
+<a class="inline-flex items-center gap-3 bg-white px-12 py-5 text-xl font-bold rounded-sm hover:bg-surface-container-highest transition-transform active:scale-95 shadow-2xl text-[#0d4a5e]" href="contact.html">
+<span>צרו קשר לתיאום הדגמה</span>
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+</div>
+<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f5f3ee] dark:bg-[#151613] flex flex-col md:flex-row-reverse justify-between items-center w-full px-12 py-16">
+<div class="mb-10 md:mb-0">
+<img alt="BeamControl" src="logo_bc.png" style="height: 36px; width: auto;"/>
+<p class="mt-4 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
+</div>
+<div class="flex flex-row-reverse gap-10 text-sm tracking-wide uppercase font-bold">
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">פרטיות</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="terms.html">תנאי שימוש</a>
+</div>
+</footer>
+<div id="lightbox-overlay" onclick="closeLightbox()">
+<span class="material-symbols-outlined" id="lightbox-close" onclick="closeLightbox()">close</span>
+<img alt="Full size view" id="lightbox-image" onclick="event.stopPropagation()" src=""/>
+</div>
+<script>
+        function openLightbox(imgSrc) {
+            const overlay = document.getElementById('lightbox-overlay');
+            const img = document.getElementById('lightbox-image');
+            img.src = imgSrc;
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const overlay = document.getElementById('lightbox-overlay');
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body></html>

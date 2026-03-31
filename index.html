@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="BeamControl — תוכנת שליטה חכמה לציוד AV בכיתות. מחליפה בקר AV יקר בתוכנה — שולטת על מקרן, מסך חשמלי, TV, רמקולים ומצלמה. ללא חומרה חיצונית.">
+<meta name="keywords" content="בקר AV, שליטה על מקרן, כיתה חכמה, BeamControl, תוכנת שליטה, ציוד AV, מקרן כיתה, מסך חשמלי">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="BeamControl — פתרון ישראלי לניהול AV חכם">
+<meta property="og:description" content="תוכנת שליטה לציוד AV בכיתות חכמות. ללא בקר חיצוני.">
+<meta property="og:url" content="https://beamcontrol.co.il">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Assistant:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "primary-fixed-dim": "#87ceff",
+                  "tertiary-container": "#a0690c",
+                  "on-secondary": "#ffffff",
+                  "inverse-primary": "#87ceff",
+                  "surface-container": "#f0eee9",
+                  "on-surface": "#1b1c19",
+                  "on-tertiary-container": "#fffbff",
+                  "on-tertiary-fixed-variant": "#643f00",
+                  "on-primary-fixed": "#001e2e",
+                  "surface-bright": "#fbf9f4",
+                  "tertiary-fixed-dim": "#feb95b",
+                  "primary-fixed": "#c8e6ff",
+                  "surface": "#fbf9f4",
+                  "primary": "#00628c",
+                  "secondary-container": "#95e6ff",
+                  "on-secondary-fixed-variant": "#004e5e",
+                  "on-primary-fixed-variant": "#004c6d",
+                  "on-surface-variant": "#40484f",
+                  "outline-variant": "#bfc7d0",
+                  "secondary": "#00677c",
+                  "tertiary-fixed": "#ffddb6",
+                  "surface-container-highest": "#e4e2dd",
+                  "inverse-surface": "#30312e",
+                  "on-secondary-fixed": "#001f27",
+                  "on-primary": "#ffffff",
+                  "primary-container": "#1f7cab",
+                  "error-container": "#ffdad6",
+                  "error": "#ba1a1a",
+                  "surface-dim": "#dcdad5",
+                  "on-tertiary-fixed": "#2a1800",
+                  "on-background": "#1b1c19",
+                  "surface-container-low": "#f5f3ee",
+                  "on-error": "#ffffff",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary": "#ffffff",
+                  "secondary-fixed": "#b1ecff",
+                  "on-error-container": "#93000a",
+                  "surface-tint": "#00658f",
+                  "surface-variant": "#e4e2dd",
+                  "outline": "#707880",
+                  "background": "#fbf9f4",
+                  "inverse-on-surface": "#f2f1ec",
+                  "on-primary-container": "#fcfcff",
+                  "secondary-fixed-dim": "#81d2eb",
+                  "surface-container-high": "#eae8e3",
+                  "on-secondary-container": "#00687d",
+                  "tertiary": "#805200"
+                },
+                fontFamily: {
+                  "headline": ["Assistant", "sans-serif"],
+                  "body": ["Assistant", "sans-serif"],
+                  "label": ["Inter", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                animation: {
+                    'infinite-scroll': 'infinite-scroll 40s linear infinite',
+                },
+                keyframes: {
+                    'infinite-scroll': {
+                        from: { transform: 'translateX(0)' },
+                        to: { transform: 'translateX(50%)' },
+                    }
+                }
+              },
+            },
+          }
+    </script>
+<style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            }
+            body { font-family: 'Assistant', sans-serif; }
+            h1, h2, h3, h4, h5, h6 { font-family: 'Assistant', sans-serif; }
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+            
+            .carousel-container {
+                display: flex;
+                transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .carousel-item {
+                min-width: 100%;
+            }
+            .nav-dot.active {
+                background-color: #00628c;
+                width: 2rem;
+            }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed" data-mode="connect">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f4] dark:bg-[#1b1c19] flex flex-row-reverse justify-between items-center w-full px-12 py-6 max-w-none mx-auto border-b border-outline-variant/10">
+<div class="flex items-center gap-2">
+<img alt="BeamControl" src="logo_bc.png" style="height: 40px; width: auto;"/>
+</div>
+<div class="hidden md:flex flex-row-reverse items-center gap-10 text-lg font-semibold tracking-tight">
+<a class="text-[#00628c] dark:text-[#2F86B6] border-b-2 border-[#00628c] pb-1 hover:opacity-100 transition-colors duration-300" href="index.html">בית</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="products.html">מוצרים</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="about.html">אודות</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="contact.html">צור קשר</a>
+</div>
+<a class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-semibold tracking-tight scale-95 active:duration-100 transition-all hover:brightness-110" href="contact.html">
+        צור קשר
+    </a>
+</nav>
+<main class="pt-[88px]">
+<!-- Hero Carousel -->
+<section class="relative bg-[#0d4a5e] overflow-hidden min-h-[700px] flex flex-col">
+<div class="carousel-container h-full flex-grow" id="heroCarousel" style="transform: translateX(0%);">
+<!-- Slide 1: Pro Version -->
+<div class="carousel-item relative flex items-center justify-center py-20 px-12 md:px-24">
+<div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col items-start gap-8 order-2 md:order-1">
+<div class="space-y-4">
+<span class="text-primary-fixed-dim font-bold tracking-[0.2em] text-sm uppercase">PREMIUM CONTROL</span>
+<h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight tracking-tighter">
+                                BeamControl Pro
+                            </h1>
+<p class="text-xl text-white/70 max-w-lg leading-relaxed font-light">פתרון ה-Pro המלא לחללי למידה וישיבות: שליטה ב-PTZ, ריבוי חיבורים ואוטומציה ללא פשרות.</p>
+</div>
+<div class="flex gap-4">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-sm font-bold text-lg transition-all hover:brightness-110" href="contact.html">
+                                צור קשר
+                            </a>
+<a class="border border-white/20 text-white px-10 py-4 rounded-sm font-bold text-lg hover:bg-white/10 transition-all" href="products.html">
+                                מידע נוסף
+                            </a>
+</div>
+</div>
+<div class="flex justify-center order-1 md:order-2">
+<img alt="BeamControl Pro Panel" class="max-h-[450px] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]" src="panel_bc_pro.png"/>
+</div>
+</div>
+</div>
+<!-- Slide 2: Basic Version -->
+<div class="carousel-item relative flex items-center justify-center py-20 px-12 md:px-24">
+<div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col items-start gap-8 order-2 md:order-1">
+<div class="space-y-4">
+<span class="text-primary-fixed-dim font-bold tracking-[0.2em] text-sm uppercase">ESSENTIAL CONTROL</span>
+<h2 class="text-6xl md:text-8xl font-extrabold text-white leading-tight tracking-tighter">
+                                BeamControl Basic
+                            </h2>
+<p class="text-xl text-white/70 max-w-lg leading-relaxed font-light">
+                                פתרון אלגנטי ופשוט לתפעול כיתות וחדרי הדרכה. כל הפונקציות ההכרחיות במינימום תשתיות ובמקסימום נוחות.
+                            </p>
+</div>
+<div class="flex gap-4">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-sm font-bold text-lg transition-all hover:brightness-110" href="contact.html">
+                                צור קשר
+                            </a>
+<a class="border border-white/20 text-white px-10 py-4 rounded-sm font-bold text-lg hover:bg-white/10 transition-all" href="products.html">
+                                מידע נוסף
+                            </a>
+</div>
+</div>
+<div class="flex justify-center order-1 md:order-2">
+<img alt="BeamControl Basic Panel" class="max-h-[450px] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]" src="panel_bc_basic.png"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<button class="absolute left-8 top-1/2 -translate-y-1/2 z-20 text-white/30 hover:text-white transition-all focus:outline-none" onclick="moveCarousel(-1)">
+<span class="material-symbols-outlined !text-6xl">chevron_left</span>
+</button>
+<button class="absolute right-8 top-1/2 -translate-y-1/2 z-20 text-white/30 hover:text-white transition-all focus:outline-none" onclick="moveCarousel(1)">
+<span class="material-symbols-outlined !text-6xl">chevron_right</span>
+</button>
+<!-- Navigation Dots -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+<button class="nav-dot w-3 h-3 rounded-full bg-white/20 transition-all duration-300 active" id="dot-0" onclick="goToSlide(0)"></button>
+<button class="nav-dot w-3 h-3 rounded-full bg-white/20 transition-all duration-300" id="dot-1" onclick="goToSlide(1)"></button>
+</div>
+</section>
+<!-- Infinite Logo Ticker -->
+<section class="bg-surface-container-low py-12 overflow-hidden border-y border-outline-variant/10">
+<div class="relative w-full overflow-hidden">
+<div class="flex animate-infinite-scroll whitespace-nowrap gap-16 items-center">
+<div class="flex gap-16 items-center text-on-surface-variant/40 font-extrabold text-xl tracking-tight">
+<span>EPSON</span><span>BenQ</span><span>Optoma</span><span>Panasonic</span><span>Sony</span>
+<span>NEC</span><span>Hitachi</span><span>ViewSonic</span><span>Sharp</span><span>Acer</span>
+<span>Canon</span><span>Barco</span><span>Christie</span><span>InFocus</span><span>Vivitek</span>
+<span>Samsung</span><span>LG</span><span>Philips</span><span>Hisense</span><span>Toshiba</span>
+</div>
+<div class="flex gap-16 items-center text-on-surface-variant/40 font-extrabold text-xl tracking-tight">
+<span>EPSON</span><span>BenQ</span><span>Optoma</span><span>Panasonic</span><span>Sony</span>
+<span>NEC</span><span>Hitachi</span><span>ViewSonic</span><span>Sharp</span><span>Acer</span>
+<span>Canon</span><span>Barco</span><span>Christie</span><span>InFocus</span><span>Vivitek</span>
+<span>Samsung</span><span>LG</span><span>Philips</span><span>Hisense</span><span>Toshiba</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Why BeamControl Section -->
+<section class="py-32 px-12 bg-surface">
+<div class="text-center mb-24 max-w-3xl mx-auto space-y-4">
+<p class="text-3xl font-extrabold text-on-surface leading-relaxed">הפתרון המקיף והידידותי ביותר לניהול מערכות AV<br/>במוסדות חינוך ובארגונים.</p>
+<div class="h-1 w-20 bg-[#2f86b6] mx-auto rounded-full mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20 rounded-xl overflow-hidden shadow-sm">
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">savings</span>
+<h3 class="text-2xl font-bold">חיסכון משמעותי ברכש</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">הפחתה דרמטית בעלויות ההצטיידות בציוד AV יקר ומורכב. המערכת שלנו מחליפה בקרים יקרים ומפשטת את כל תהליך הרכש המוסדי.</p>
+</div>
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">usb</span>
+<h3 class="text-2xl font-bold">חיבור USB פשוט</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">כבל USB יחיד וסטנדרטי מחבר את ערכת הבקרה למחשב. הכבל מעביר פקודות שליטה בלבד.</p>
+</div>
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">ads_click</span>
+<h3 class="text-2xl font-bold">כפתור אחד מדליק הכל</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">מבטל את המורכבות. בלחיצת כפתור אחת, כל מערכות החדר מתעוררות לחיים ומוכנות לעבודה.</p>
+</div>
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">tune</span>
+<h3 class="text-2xl font-bold">התאמה אישית</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">ממשק גמיש המותאם לצרכים הספציפיים של המוסד שלכם, עם אפשרות להגדרת תרחישים ייעודיים.</p>
+</div>
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">shield_person</span>
+<h3 class="text-2xl font-bold">הגנה טבעית (Architectural)</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">מאחר ולוח הבקרה פועל אך ורק על מחשב המורה, לתלמידים אין כל גישה פיזית או דיגיטלית להגדרות - יתרון מובנה בתכנון המערכת.</p>
+</div>
+<div class="bg-surface p-12 flex flex-col gap-6 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary text-4xl group-hover:scale-110 transition-transform">grid_view</span>
+<h3 class="text-2xl font-bold">סטנדרט אחיד בכל הכיתות</h3>
+<p class="text-on-surface-variant leading-relaxed font-medium">חוויית משתמש זהה בכל חלל עבודה, המאפשרת למרצים ולעובדים לעבור בין חדרים ללא עקומת למידה.</p>
+</div>
+</div>
+</section>
+<!-- Featured Benefit Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-12 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<span class="text-primary font-bold tracking-widest text-sm uppercase">Legacy &amp; Excellence</span>
+<h2 class="text-5xl font-extrabold leading-tight">30 שנות ניסיון<br/>בכל קליק.</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed font-medium">
+                        המוצר שלנו הוא תולדה של שלושה עשורים של עבודה בשטח, הבנת האתגרים האמיתיים של מוסדות והקשבה מתמדת ללקוחותינו.
+                    </p>
+</div>
+<div class="bg-surface p-8 rounded-lg shadow-sm border-r-4 border-primary space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+<h3 class="text-xl font-bold">הנדסה מכוונת משתמש</h3>
+</div>
+<p class="text-on-surface-variant font-medium">התקנה נקייה. המערכת מתוכננת לשרידות מקסימלית ותפעול פשוט גם בתנאי עבודה אינטנסיביים.</p>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-2xl transform group-hover:-rotate-2 transition-transform duration-500"></div>
+<img alt="Professional AV Conference Setup" class="relative rounded-xl shadow-xl w-full aspect-video object-cover" src="conference_room.jpg"/>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-12 bg-[#0d4a5e] border-t border-white/10">
+<div class="max-w-4xl mx-auto text-center space-y-8">
+<h2 class="text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tighter">מוכנים להתחיל?</h2>
+<p class="text-xl md:text-2xl text-white/70 leading-relaxed font-light">
+                צרו איתנו קשר ונחבר אתכם למפיץ המורשה הקרוב אליכם.
+            </p>
+<div class="pt-8">
+<a class="inline-block bg-primary text-on-primary px-12 py-4 rounded-sm font-extrabold text-xl transition-all hover:brightness-110 shadow-lg shadow-primary/20" href="contact.html">
+                    צרו קשר
+                </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f3ee] dark:bg-[#151613] flex flex-col md:flex-row-reverse justify-between items-center w-full px-12 py-16">
+<div class="mb-10 md:mb-0">
+<img alt="BeamControl" src="logo_bc.png" style="height: 36px; width: auto;"/>
+<p class="mt-4 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
+</div>
+<div class="flex flex-row-reverse gap-10 text-sm tracking-wide uppercase font-bold">
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">פרטיות</a>
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="terms.html">תנאי שימוש</a>
+</div>
+</footer>
+<script>
+    let currentSlide = 0;
+    const carousel = document.getElementById('heroCarousel');
+    const dots = document.querySelectorAll('.nav-dot');
+    const totalSlides = 2;
+
+    function updateCarousel() {
+        carousel.style.transform = `translateX(${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    function moveCarousel(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+
+    let autoPlay = setInterval(() => moveCarousel(1), 8000);
+    const container = document.querySelector('section.relative');
+    container.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    container.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveCarousel(1), 8000));
+</script>
+</body></html>
