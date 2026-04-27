@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he"><head>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta charset="utf-8"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="description" content="BeamControl — תוכנת שליטה חכמה לציוד AV בכיתות. מחליפה בקר AV יקר בתוכנה — שולטת על מקרן, מסך חשמלי, TV, רמקולים ומצלמה. ללא חומרה חיצונית.">
 <meta name="keywords" content="בקר AV, שליטה על מקרן, כיתה חכמה, BeamControl, תוכנת שליטה, ציוד AV, מקרן כיתה, מסך חשמלי">
@@ -10,7 +10,39 @@
 <meta property="og:title" content="BeamControl — פתרון ישראלי לניהול AV חכם">
 <meta property="og:description" content="תוכנת שליטה לציוד AV בכיתות חכמות. ללא בקר חיצוני.">
 <meta property="og:url" content="https://beamcontrol.co.il/products.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://beamcontrol.co.il/logo_bc.png">
+<meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://beamcontrol.co.il/products.html">
 <title>BeamControl - מוצרים</title>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BeamControl Pro",
+    "description": "פתרון פרימיום לחללים מורכבים הדורשים שליטה מרובת ממשקים. כולל שליטה על מקרן, מסך חשמלי, TV, מצלמת PTZ, רמקולים ומיתוג HDMI.",
+    "image": "https://beamcontrol.co.il/pro_pc.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "BeamControl"
+    },
+    "category": "AV Control Software"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BeamControl Basic",
+    "description": "פתרון אידיאלי לכיתות לימוד סטנדרטיות וחדרי ישיבות. כולל שליטה על מקרן, מסך חשמלי, רמקולים, ווליום ומיתוג HDMI.",
+    "image": "https://beamcontrol.co.il/basic_pc.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "BeamControl"
+    },
+    "category": "AV Control Software"
+  }
+]
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700;6..72,800&amp;family=Inter:wght@400;500;600;700&amp;family=Assistant:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -132,10 +164,25 @@
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="about.html">אודות</a>
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="contact.html">צור קשר</a>
 </div>
-<a class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-semibold tracking-tight scale-95 active:duration-100 transition-all hover:brightness-110" href="contact.html">
-            צור קשר
+<a class="flex items-center gap-2 text-primary font-semibold tracking-tight hover:opacity-80 transition-opacity" href="tel:0508505339">
+            <span class="material-symbols-outlined">call</span>
+            <span dir="ltr">050-8505339</span>
         </a>
+<button class="md:hidden flex items-center text-on-surface" id="mobile-menu-toggle" aria-label="פתח תפריט">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </nav>
+<div class="hidden fixed inset-0 z-[60] bg-[#0d4a5e]" id="mobile-menu">
+<button class="absolute top-6 left-6 text-white" id="mobile-menu-close" aria-label="סגור תפריט">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="flex flex-col items-center justify-center h-full gap-8">
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="index.html">בית</a>
+<a class="text-primary-fixed-dim text-3xl font-bold transition-opacity" href="products.html">מוצרים</a>
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="about.html">אודות</a>
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="contact.html">צור קשר</a>
+</div>
+</div>
 <!-- Section 1: Hero -->
 <header class="relative w-full py-24 md:py-32 text-white flex flex-col items-center justify-center text-center overflow-hidden bg-[#0d4a5e]">
 <div class="absolute inset-0 opacity-20 pointer-events-none">
@@ -233,7 +280,7 @@
 <section class="bg-surface-container-low px-6 pt-24 pb-8">
 <div class="max-w-5xl mx-auto" style="margin-bottom: -60px; position: relative; z-index: 10;">
 <h2 class="text-4xl font-bold text-center mb-16">BeamControl מול בקר חיצוני קלאסי</h2>
-<div class="overflow-hidden rounded-md border border-outline-variant/30 bg-white shadow-sm">
+<div class="hidden md:block overflow-hidden rounded-md border border-outline-variant/30 bg-white shadow-sm">
 <table class="w-full text-right border-collapse">
 <thead>
 <tr class="bg-surface-container-high border-b border-outline-variant/40">
@@ -310,6 +357,72 @@
 </tbody>
 </table>
 </div>
+<div class="md:hidden space-y-4">
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">מחיר</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>חסכוני משמעותית</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">יקר ומסורבל</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">התקנה</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>Plug &amp; Play מהיר</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">שעות של חיווט, קדיחה והתקנה פיזית</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">תכנות</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>ללא צורך בקוד</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">דורש מתכנת מוסמך</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">תחזוקה</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>תוכנה בלבד — אין חומרה שיכולה להישבר</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">פאנל פיזי על הקיר — חשוף לנזק ותקלות</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">עדכונים</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>עדכון עצמאי בלחיצה אחת</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">דורש טכנאי לתכנות מחדש</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">גמישות</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>מודולריות מלאה</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">חומרה סגורה וקבועה</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">שפה</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>מעבר עברית/אנגלית בלחיצה אחת</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">תוויות קבועות</div>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-md p-5 shadow-sm">
+<h3 class="font-bold text-lg mb-3">קלות שימוש</h3>
+<div class="flex items-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>check_circle</span>
+<span>ממשק פשוט ואינטואיטיבי — כל מורה מבין מיד</span>
+</div>
+<div class="text-on-surface-variant opacity-60 text-sm pr-8">לחצנים פיזיים לא תמיד ברורים</div>
+</div>
+</div>
 </div>
 </section>
 <!-- Section 4: Demo Request -->
@@ -325,14 +438,42 @@
 <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"></div>
 </section>
 <!-- Footer -->
-<footer class="bg-[#f5f3ee] dark:bg-[#151613] flex flex-col md:flex-row-reverse justify-between items-center w-full px-12 py-16">
-<div class="mb-10 md:mb-0">
+<footer class="bg-[#f5f3ee] dark:bg-[#151613] w-full px-12 py-16">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div>
 <img alt="BeamControl" src="logo_bc.png" style="height: 36px; width: auto;"/>
-<p class="mt-4 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
+<p class="mt-4 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-70 font-medium">פתרון ישראלי לניהול AV חכם</p>
+<p class="mt-3 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
 </div>
-<div class="flex flex-row-reverse gap-10 text-sm tracking-wide uppercase font-bold">
-<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">פרטיות</a>
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mb-4">ניווט</h3>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="index.html">בית</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">מוצרים</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="about.html">אודות</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="contact.html">צור קשר</a></li>
+</ul>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mt-6 mb-4">המוצרים שלנו</h3>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">BeamControl Basic</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">BeamControl Pro</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="contact.html">פאנל בהתאמה אישית</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mb-4">צרו קשר</h3>
+<ul class="space-y-3">
+<li><a class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="tel:0508505339"><span class="material-symbols-outlined text-base">call</span><span dir="ltr">050-8505339</span></a></li>
+<li><a class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="mailto:support@beamcontrol.co.il"><span class="material-symbols-outlined text-base">mail</span><span dir="ltr">support@beamcontrol.co.il</span></a></li>
+<li><div class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60"><span class="material-symbols-outlined text-base">schedule</span><span>א׳-ה׳, 9:00-18:00</span></div></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#1b1c19]/10 dark:border-[#fbf9f4]/10 mt-12 pt-8 flex justify-center gap-10 text-sm tracking-wide uppercase font-bold">
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">מדיניות פרטיות</a>
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="terms.html">תנאי שימוש</a>
+</div>
 </div>
 </footer>
 <div id="lightbox-overlay" onclick="closeLightbox()">
@@ -356,4 +497,13 @@
             document.body.style.overflow = 'auto';
         }
     </script>
+<script>
+(function(){
+const toggle=document.getElementById('mobile-menu-toggle');
+const close=document.getElementById('mobile-menu-close');
+const menu=document.getElementById('mobile-menu');
+toggle.addEventListener('click',()=>{menu.classList.remove('hidden');document.body.style.overflow='hidden';});
+close.addEventListener('click',()=>{menu.classList.add('hidden');document.body.style.overflow='';});
+})();
+</script>
 </body></html>

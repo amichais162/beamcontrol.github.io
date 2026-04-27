@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="he"><head>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta charset="utf-8"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="description" content="BeamControl — תוכנת שליטה חכמה לציוד AV בכיתות. מחליפה בקר AV יקר בתוכנה — שולטת על מקרן, מסך חשמלי, TV, רמקולים ומצלמה. ללא חומרה חיצונית.">
 <meta name="keywords" content="בקר AV, שליטה על מקרן, כיתה חכמה, BeamControl, תוכנת שליטה, ציוד AV, מקרן כיתה, מסך חשמלי">
@@ -10,6 +10,32 @@
 <meta property="og:title" content="BeamControl — פתרון ישראלי לניהול AV חכם">
 <meta property="og:description" content="תוכנת שליטה לציוד AV בכיתות חכמות. ללא בקר חיצוני.">
 <meta property="og:url" content="https://beamcontrol.co.il">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://beamcontrol.co.il/logo_bc.png">
+<meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://beamcontrol.co.il/">
+<title>BeamControl — פתרון ישראלי לניהול AV חכם</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BeamControl",
+  "url": "https://beamcontrol.co.il",
+  "logo": "https://beamcontrol.co.il/logo_bc.png",
+  "description": "תוכנת שליטה חכמה לציוד AV בכיתות ובחללי עבודה. מחליפה בקר AV יקר בתוכנה — ללא חומרה חיצונית.",
+  "telephone": "+972-50-850-5339",
+  "email": "support@beamcontrol.co.il",
+  "areaServed": "IL",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "telephone": "+972-50-850-5339",
+    "email": "support@beamcontrol.co.il",
+    "availableLanguage": "Hebrew"
+  },
+  "sameAs": []
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Assistant:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -119,10 +145,25 @@
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="about.html">אודות</a>
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-80 hover:opacity-100 hover:text-[#00628c] transition-colors duration-300" href="contact.html">צור קשר</a>
 </div>
-<a class="bg-primary text-on-primary px-8 py-2.5 rounded-sm font-semibold tracking-tight scale-95 active:duration-100 transition-all hover:brightness-110" href="contact.html">
-        צור קשר
+<a class="flex items-center gap-2 text-primary font-semibold tracking-tight hover:opacity-80 transition-opacity" href="tel:0508505339">
+        <span class="material-symbols-outlined">call</span>
+        <span dir="ltr">050-8505339</span>
     </a>
+<button class="md:hidden flex items-center text-on-surface" id="mobile-menu-toggle" aria-label="פתח תפריט">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 </nav>
+<div class="hidden fixed inset-0 z-[60] bg-[#0d4a5e]" id="mobile-menu">
+<button class="absolute top-6 left-6 text-white" id="mobile-menu-close" aria-label="סגור תפריט">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="flex flex-col items-center justify-center h-full gap-8">
+<a class="text-primary-fixed-dim text-3xl font-bold transition-opacity" href="index.html">בית</a>
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="products.html">מוצרים</a>
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="about.html">אודות</a>
+<a class="text-white text-3xl font-bold hover:opacity-80 transition-opacity" href="contact.html">צור קשר</a>
+</div>
+</div>
 <main class="pt-[88px]">
 <!-- Hero Carousel -->
 <section class="relative bg-[#0d4a5e] overflow-hidden min-h-[700px] flex flex-col">
@@ -292,14 +333,42 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#f5f3ee] dark:bg-[#151613] flex flex-col md:flex-row-reverse justify-between items-center w-full px-12 py-16">
-<div class="mb-10 md:mb-0">
+<footer class="bg-[#f5f3ee] dark:bg-[#151613] w-full px-12 py-16">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div>
 <img alt="BeamControl" src="logo_bc.png" style="height: 36px; width: auto;"/>
-<p class="mt-4 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
+<p class="mt-4 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-70 font-medium">פתרון ישראלי לניהול AV חכם</p>
+<p class="mt-3 text-sm tracking-wide text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 font-medium">© 2025 BeamControl. כל הזכויות שמורות.</p>
 </div>
-<div class="flex flex-row-reverse gap-10 text-sm tracking-wide uppercase font-bold">
-<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">פרטיות</a>
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mb-4">ניווט</h3>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="index.html">בית</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">מוצרים</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="about.html">אודות</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="contact.html">צור קשר</a></li>
+</ul>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mt-6 mb-4">המוצרים שלנו</h3>
+<ul class="space-y-2">
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">BeamControl Basic</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="products.html">BeamControl Pro</a></li>
+<li><a class="text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="contact.html">פאנל בהתאמה אישית</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xs uppercase tracking-widest font-bold text-[#1b1c19] dark:text-[#fbf9f4] opacity-50 mb-4">צרו קשר</h3>
+<ul class="space-y-3">
+<li><a class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="tel:0508505339"><span class="material-symbols-outlined text-base">call</span><span dir="ltr">050-8505339</span></a></li>
+<li><a class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 transition-opacity" href="mailto:support@beamcontrol.co.il"><span class="material-symbols-outlined text-base">mail</span><span dir="ltr">support@beamcontrol.co.il</span></a></li>
+<li><div class="flex items-center gap-2 text-sm text-[#1b1c19] dark:text-[#fbf9f4] opacity-60"><span class="material-symbols-outlined text-base">schedule</span><span>א׳-ה׳, 9:00-18:00</span></div></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-[#1b1c19]/10 dark:border-[#fbf9f4]/10 mt-12 pt-8 flex justify-center gap-10 text-sm tracking-wide uppercase font-bold">
+<a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="privacy.html">מדיניות פרטיות</a>
 <a class="text-[#1b1c19] dark:text-[#fbf9f4] opacity-60 hover:opacity-100 hover:underline transition-all" href="terms.html">תנאי שימוש</a>
+</div>
 </div>
 </footer>
 <script>
@@ -333,5 +402,14 @@
     const container = document.querySelector('section.relative');
     container.addEventListener('mouseenter', () => clearInterval(autoPlay));
     container.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveCarousel(1), 8000));
+</script>
+<script>
+(function(){
+const toggle=document.getElementById('mobile-menu-toggle');
+const close=document.getElementById('mobile-menu-close');
+const menu=document.getElementById('mobile-menu');
+toggle.addEventListener('click',()=>{menu.classList.remove('hidden');document.body.style.overflow='hidden';});
+close.addEventListener('click',()=>{menu.classList.add('hidden');document.body.style.overflow='';});
+})();
 </script>
 </body></html>
